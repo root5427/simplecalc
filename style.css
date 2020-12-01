@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+
+.logo {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 4rem;
+  color: #ef5777;
+}
+
+.logo span {
+  color: #ffc048;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.calculator button.number,
+.calculator button.sign {
+  padding: 1.5rem 4rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.calculator button {
+  color: #fff;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 32px;
+  line-height: 100%;
+  box-shadow: 3px 3px 0px 1px rgba(0, 0, 0, 0.19);
+  transition: 0.2s linear;
+}
+
+.calculator button:hover {
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 0px 1px rgba(0, 0, 0, 0);
+}
+
+.calculator button.number {
+  background: #34e7e4;
+}
+
+.calculator button.sign {
+  background: #ef5777;
+}
+
+.calculator button.clear {
+  background: #575fcf;
+  box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 32px;
+  font-weight: normal;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.output {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  height: 4rem;
+  background: #808e9b;
+  border-radius: 32px;
+  color: #fff;
+  text-align: center;
+  line-height: 4rem;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.calculator--header * {
+  display: inline-block;
+}
+
+#zero {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background: #4bcffa;
+}
+
+#equal {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  background: #ffc048;
+  border: none;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  /* .logo {
+    font-size: 2.5rem;
+  } */
+  .logo {
+    font-size: 2rem;
+  }
+  .calculator button {
+    font-size: 1rem;
+    padding: 0.75rem 2rem !important;
+  }
+  .output {
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1;
+    padding: 0.6rem;
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  .calculator {
+    column-gap: 0.5rem;
+    row-gap: 0.2rem;
+  }
+  .calculator button {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem !important;
+    border: none;
+    box-shadow: none;
+  }
+  .output {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1;
+    padding: 0.4rem;
+    height: fit-content;
+  }
+}
